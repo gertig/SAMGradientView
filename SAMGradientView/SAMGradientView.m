@@ -292,7 +292,7 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
     // colorComponents = (CGFloat *)malloc(sizeof(CGFloat) * colorsCount * 4);
 
 	[colors enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
-	    const CGFloat *colorComponents = CGColorGetComponents([(UIColor *)object CGColor]);
+	    CGFloat *colorComponents = CGColorGetComponents([(UIColor *)object CGColor]);
 	    for (int i = 0; i < 4; ++i) {
 	    	int ci = i + index;
 		    gradientColorComponents[ci] = colorComponents[i];
