@@ -286,7 +286,7 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
 
 	CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors objectAtIndex:0] CGColor]);
 
-    CGFloat *gradientColors = NULL;
+    CGFloat *gradientColorComponents = NULL;
     gradientColorComponents = (CGFloat *)malloc(sizeof(CGFloat) * colorsCount * 4);
     // CGFloat *colorComponents = NULL;
     // colorComponents = (CGFloat *)malloc(sizeof(CGFloat) * colorsCount * 4);
@@ -295,14 +295,14 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
 	    const CGFloat *colorComponents = CGColorGetComponents([(UIColor *)object CGColor]);
 	    for (int i = 0; i < 4; ++i) {
 	    	int ci = i + index;
-		    gradientColors[ci] = colorComponents[i];
+		    gradientColorComponents[ci] = colorComponents[i];
 		}
 	}];
 
 	NSLog(@"Colors Count = %i", colorsCount);
 	NSUInteger componentCount = colorsCount * 4;
 	for (int i=0; i < componentCount; i++) {
-	    NSLog(@"SAM Color: %f at index %i", gradientColors[i], i);
+	    NSLog(@"SAM Color: %f at index %i", gradientColorComponents[i], i);
 	}
 
 	CGFloat *gradientLocations = NULL;
