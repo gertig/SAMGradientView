@@ -298,7 +298,7 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
 			}
 	}];
 
-	NSLog("Colors Array = %f", gradientColors);
+	NSLog(@"Colors Array = %f", gradientColors);
 
 	CGFloat *gradientLocations = NULL;
 	NSUInteger locationsCount = [locations count];
