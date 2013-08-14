@@ -284,7 +284,8 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
 		return nil;
 	}
 
-	CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors objectAtIndex:0] CGColor]);
+	// CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors objectAtIndex:0] CGColor]);
+	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 
     CGFloat *gradientColorComponents = NULL;
     gradientColorComponents = (CGFloat *)malloc(sizeof(CGFloat) * colorsCount * 4);
