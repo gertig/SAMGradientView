@@ -324,11 +324,13 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
 		}];
 	}
 
+	size_t  fakeCount = 2;
+    CGFloat fakeLocations[2] = {0.0f, 1.0f};
 	CGFloat fakeColors[8] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.75f}; 
 
 	// CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
 	// CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, gradientColorComponents, gradientLocations, lCount);
-	CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, fakeColors, gradientLocations, lCount);
+	CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, fakeColors, fakeLocations, fakeCount);
 	CGColorSpaceRelease(colorSpace);
 
 	if (gradientLocations) {
