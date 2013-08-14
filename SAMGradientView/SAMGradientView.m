@@ -297,7 +297,7 @@ CGGradientRef SAMGradientCreateWithColorsAndLocations(NSArray *colors, NSArray *
 
 	    for (int i = 0; i < 4; ++i) {
 	    	int ci = i + index;
-	    	NSLog(@"SAM Color: %f at index %i", colorComponents[i], ci);
+	    	NSLog(@"SAM Color: %f at ci index %i", colorComponents[i], ci);
 
 		    gradientColorComponents[ci] = colorComponents[i];
 		}
